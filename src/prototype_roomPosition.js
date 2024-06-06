@@ -42,7 +42,7 @@ RoomPosition.prototype.getClosestSource = function(filter) {
 
 RoomPosition.prototype.findInRangeStructures = function(objects, range, structureTypes) {
   // TODO this method should be deprecated
-  return this.findInRange(objects, range, {filter: (object) => structureTypes.includes(object.structureType)});
+  return this.findInRange(objects, range, {filter: (object) => structureTypes ? structureTypes.includes(object.structureType) : false});
 };
 
 RoomPosition.prototype.findHostileStructuresInRangedAttackRange = function() {
